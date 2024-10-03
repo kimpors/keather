@@ -1,7 +1,18 @@
 ﻿@model Root
 
-<h2>Today</h2>
-<ul>
-	<li>Temperature: @Model.list[0].main.temp</li>
-	<li>Pressure: @Model.list[0].main.pressure</li>
-</ul>
+<article>
+	<section class="header-card">
+		<h2>Current Weather</h2>
+		<a href="#">more</a>
+	</section>
+	<section class="weather">
+		<h3>@Model.list[0].main.temp.ToString("#")</h3>
+
+		Feels Like:
+		@Model.list[0].main.feels_like.ToString("#")
+		<br>
+		Wind: @Model.list[0].wind.speed.ToString("#")
+		<br>
+		Wind Guts: @Model.list[0].wind.gust.ToString("#")
+	</section>
+</article>

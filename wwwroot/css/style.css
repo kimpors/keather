@@ -17,7 +17,6 @@ header > h1 {
 	margin: 5px;
 	font-size: 48px;
 	font-weight: normal;
-
 }
 
 nav > a {
@@ -25,4 +24,48 @@ nav > a {
 	font-size: 24px;
 	padding-inline: 3px;
 	text-decoration: none;
+}
+
+h2 {
+	display: block;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	padding-inline: 20px;
+	padding-top: 10px;
+	margin-inline: 600px;
+	border-radius: 10px;
+	background-color: #B8C0E0;
+}
+
+section.weather {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+}
+
+section.weather > h3 {
+	margin: 0;
+	font-size: 76px;
+}
+
+section.weather > h3::after {
+	content: "|";
+}
+
+section.header-card
+{
+	display: flex;
+	align-items: center;
+}
+
+section.header-card > h2
+{
+	font-size: 20px;
+	font-weight: normal;
+
+	width: 100%;
 }
