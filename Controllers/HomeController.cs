@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Keather.Api;
+using System;
 
 namespace Keather.Controllers;
 
@@ -20,17 +21,21 @@ public class HomeController : Controller
 			return View(null);
 		}
 
+
 		return View(JsonConvert.DeserializeObject<Root>(response.Result));
     }
 
-	public IActionResult Hourly()
-	{
-		return View();
-	}
-
 	public IActionResult Daily()
 	{
-		return View();
+		var response = _client.GetStringAsync($"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api}&units=metric");
+		response.Wait();
+
+		if (!response.IsCompletedSuccessfully)
+		{
+			return View(null);
+		}
+
+		return View(JsonConvert.DeserializeObject<Root>(response.Result));
 	}
 
 	public IActionResult Air()
