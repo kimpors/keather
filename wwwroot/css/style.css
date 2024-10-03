@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+}
+
+body, nav {
+	background-color: #A5ADCB;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: #B8C0E0;
+}
+
+header > h1 {
+	margin: 5px;
+	font-size: 48px;
+	font-weight: normal;
+
+}
+
+nav > a {
+	color: black;
+	font-size: 24px;
+	padding-inline: 3px;
+	text-decoration: none;
+}
