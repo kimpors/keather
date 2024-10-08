@@ -1,18 +1,24 @@
 ﻿@model Root
 
-<article>
-	<section class="header-card">
-		<h2>Current Weather</h2>
-		<a href="#">more</a>
-	</section>
-	<section class="weather">
-		<h3>@Model.list[0].main.temp.ToString("#")</h3>
 
-		Feels Like:
-		@Model.list[0].main.feels_like.ToString("#")
-		<br>
-		Wind: @Model.list[0].wind.speed.ToString("#")
-		<br>
-		Wind Guts: @Model.list[0].wind.gust.ToString("#")
-	</section>
-</article>
+@foreach(var weather in @Model.list.DistinctBy(u => DateTime.Parse(u.dt_txt).ToString("d")))
+{
+	<article>
+		<h2 class="header">@DateTime.Parse(weather.dt_txt).ToString("ddd MM/dd")</h2>
+		<img class="footer-card" src="img/cloud.svg"
+		alt="cloud">
+		<section class="weather">
+			<h3>@weather.main.temp.ToString("#")</h3>
+
+			Feels Like:
+			@weather.main.feels_like.ToString("#")
+			<br>
+			Wind: @weather.wind.speed.ToString("#")
+			<br>
+			Wind Guts: @weather.wind.gust.ToString("#")
+		</section>
+		<img class="footer-card" src="img/cloud.svg"
+		alt="cloud" style="rotate: 180deg;">
+	</article>
+}
+

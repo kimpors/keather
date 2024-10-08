@@ -33,12 +33,10 @@ h2 {
 article {
 	display: flex;
 	flex-direction: column;
-	padding-inline: 20px;
-	padding-top: 10px;
 	margin-inline: 600px;
 	margin-block: 30px;
 	border-radius: 10px;
-	background-color: #B8C0E0;
+	background-color: #CAD3F5;
 }
 
 section.weather {
@@ -57,16 +55,7 @@ section.weather > h3::after {
 	content: "|";
 }
 
-section.header-card
-{
-	display: flex;
-	align-items: center;
-}
+h2.header {
+	position: absolute;
 
-section.header-card > h2
-{
-	font-size: 20px;
-	font-weight: normal;
-
-	width: 100%;
 }

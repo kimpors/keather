@@ -21,22 +21,13 @@ public class HomeController : Controller
 			return View(null);
 		}
 
+		// List<DateTime> a = new();
+
+		// foreach(var u in a.DistinctBy(u => u.ToString("dd")));
+
 
 		return View(JsonConvert.DeserializeObject<Root>(response.Result));
     }
-
-	public IActionResult Daily()
-	{
-		var response = _client.GetStringAsync($"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api}&units=metric");
-		response.Wait();
-
-		if (!response.IsCompletedSuccessfully)
-		{
-			return View(null);
-		}
-
-		return View(JsonConvert.DeserializeObject<Root>(response.Result));
-	}
 
 	public IActionResult Air()
 	{
