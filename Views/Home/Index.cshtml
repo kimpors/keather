@@ -1,24 +1,24 @@
 ﻿@model Root
 
 
-@foreach(var weather in @Model.list.DistinctBy(u => DateTime.Parse(u.dt_txt).ToString("d")))
+@foreach(var l in @Model.list.DistinctBy(u => DateTime.Parse(u.dt_txt).ToString("d")))
 {
 	<article>
-		<h2 class="header">@DateTime.Parse(weather.dt_txt).ToString("ddd MM/dd")</h2>
-		<img class="footer-card" src="img/cloud.svg"
-		alt="cloud">
+		<h2 class="header">@DateTime.Parse(l.dt_txt).ToString("ddd MM/dd")</h2>
+		<img src=@($"img/{l.weather[0].icon.Substring(0, 2)}-top.svg") alt=@($"{l.weather[0].description}")>
 		<section class="weather">
-			<h3>@weather.main.temp.ToString("#")</h3>
+			<h3>@l.main.temp.ToString("#")</h3>
 
 			Feels Like:
-			@weather.main.feels_like.ToString("#")
+			@l.main.feels_like.ToString("#")
 			<br>
-			Wind: @weather.wind.speed.ToString("#")
+			Wind: @l.wind.speed.ToString("#")
 			<br>
-			Wind Guts: @weather.wind.gust.ToString("#")
+			Wind Guts: @l.wind.gust.ToString("#")
 		</section>
 		<img class="footer-card" src="img/cloud.svg"
-		alt="cloud" style="rotate: 180deg;">
+		alt="">
+		<img src=@($"img/{l.weather[0].icon.Substring(0, 2)}-bot.svg") alt=@l.weather[0].description>
 	</article>
 }
 

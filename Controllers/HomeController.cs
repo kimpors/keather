@@ -21,11 +21,6 @@ public class HomeController : Controller
 			return View(null);
 		}
 
-		// List<DateTime> a = new();
-
-		// foreach(var u in a.DistinctBy(u => u.ToString("dd")));
-
-
 		return View(JsonConvert.DeserializeObject<Root>(response.Result));
     }
 
