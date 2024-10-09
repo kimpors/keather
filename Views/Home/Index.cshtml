@@ -1,6 +1,6 @@
 ﻿@model Root
 
-<main role="main">
+<main id="main" role="main">
 	@foreach(var l in @Model.list.DistinctBy(u => DateTime.Parse(u.dt_txt).ToString("d")))
 	{
 		<article>

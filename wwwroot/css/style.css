@@ -8,9 +8,10 @@ html, body {
 
 main {
 	height: max-content;
-	margin-top: 75px;
+	margin-block: 100px;
+	scroll-behavior: smooth;
 	display: flex;
-	overflow-x: scroll;
+	overflow: hidden;
 	overflow-y: hidden;
 }
 
@@ -46,7 +47,7 @@ article {
 	display: flex;
 	flex-direction: column;
 	height: 500px;
-	margin-left: 100px;
+	margin-inline: 100px;
 	margin-block: 30px;
 	border-radius: 10px;
 	background-color: #CAD3F5;
