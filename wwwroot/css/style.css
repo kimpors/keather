@@ -2,6 +2,18 @@ body {
 	margin: 0;
 }
 
+html, body {
+	height: 100%;
+}
+
+main {
+	height: max-content;
+	margin-top: 75px;
+	display: flex;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
 body, nav {
 	background-color: #A5ADCB;
 }
@@ -33,7 +45,8 @@ h2 {
 article {
 	display: flex;
 	flex-direction: column;
-	margin-inline: 600px;
+	height: 500px;
+	margin-left: 100px;
 	margin-block: 30px;
 	border-radius: 10px;
 	background-color: #CAD3F5;
@@ -56,6 +69,7 @@ section.weather > h3::after {
 }
 
 h2.header {
-	position: absolute;
-
+	display: flexbox;
+	color: #CAD3F5;
 }
+
